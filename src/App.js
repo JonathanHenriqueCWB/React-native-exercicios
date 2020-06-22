@@ -10,7 +10,7 @@ export default class App extends Component{
     return(
       <View style={styles.container}>
         <Text style={styles.f20}>App Component!</Text>
-        <Simples texto='Texto passado por propriedade!'></Simples>
+        <Simples texto='Propriedade'></Simples>
       </View>
     );
   }

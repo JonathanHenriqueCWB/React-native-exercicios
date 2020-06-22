@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Text} from 'react-native';
 
+import Padrao from '../estilo/Padrao';
+
 //TIPOS DE COMPONENTES FUNCIONAIS (Componentes baseados em funções)
 
 /*
@@ -23,4 +25,4 @@ export default props =>{
 }
 */
 
-export default props => <Text>Arrow: {props.texto}</Text>
+export default props => <Text style={[Padrao.ex]}>Arrow: {props.texto}</Text>

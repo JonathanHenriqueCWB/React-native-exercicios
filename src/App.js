@@ -1,37 +1,30 @@
-import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
+import Menu from './Menu';
 import Simples from './componentes/Simples';
 import ParImpar from './componentes/ParImpar';
-import {Inverter, MegaSena} from './componentes/Multi';
+import Multi from './componentes/Multi';
 
-export default class App extends Component{
+const Stack = createStackNavigator();
 
-  //Funão responsavel por renderiza uma tela
-  render(){
-    return(
-      <View style={styles.container}>
-        <Text style={styles.f20}>App Component!</Text>
-        <Simples texto='Propriedade'></Simples>
-        <ParImpar numero='11'></ParImpar>
-        <Inverter texto='React Native'></Inverter>
-        <MegaSena numero={9}></MegaSena>
-      </View>
-    );
-  }
-
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Menu" component={Menu} />    
+        <Stack.Screen name="Simples" component={Simples} />
+        <Stack.Screen name="ParImpar" component={ParImpar} />
+        <Stack.Screen name="Multi" component={Multi} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
+export default App;
 
-//Estilização
-const styles = StyleSheet.create({
-
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  f20: {
-    fontSize: 20
-  }
-
-});
+/**
+ * O que define qual será a primeira rota a carregar será a primeira
+ * stack.Screen, ou seja, a primeira rota a ser comfigurada, sendo que
+ * essa obrigatoriamente deverá receber o argumento navigatio: {navigation}
+ */

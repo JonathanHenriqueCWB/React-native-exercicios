@@ -1,15 +1,24 @@
 import * as React from 'react';
 import { View, Button } from 'react-native';
 
-//Será o primeiro componente a ser renderizado por conter o navigation
 export default function({navigation}) {
     return (
       <View>
+
         <Button
-          title="Multi Componentes"
+          title="MULTI - Mega Sena"
           onPress={() => {
-            navigation.navigate('Multi', {
-              texto: 'vai tomar no cu',
+            navigation.push('Mega', {
+              numero: 6,
+            });
+          }}
+        />
+
+        <Button
+          title="MULTI - Inverter"
+          onPress={() => {
+            navigation.navigate('Inverter', {
+              texto: 'Multi Componentes',
             });
           }}
         />
